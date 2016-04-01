@@ -1,5 +1,7 @@
 # Add code for 2 player math game
 
+require 'colorize'
+
 @player1 = "Player 1"
 @player2 = "Player 2"
 
@@ -44,10 +46,10 @@ def play
 
   if answer_correct?(question_inputs, answer)
     @player1score += 1
-    puts "Correct! Player 1 Score = #{@player1score}; Player 2 Score = #{@player2score}"
+    puts "Correct! Player 1 Score = #{@player1score}; Player 2 Score = #{@player2score}".colorize(:green)
   else
     @player1lives -= 1
-    puts "Incorrect! Player 1 Lives Left = #{@player1lives}; Player 2 Lives Left = #{@player2lives}"
+    puts "Incorrect! Player 1 Lives Left = #{@player1lives}; Player 2 Lives Left = #{@player2lives}".colorize(:red)
     return if @player1lives == 0 
   end
 
@@ -65,10 +67,10 @@ def play
 
   if answer_correct?(question_inputs, answer)
     @player2score += 1
-    puts "Correct! Player 1 Score = #{@player1score}; Player 2 Score = #{@player2score}"
+    puts "Correct! Player 1 Score = #{@player1score}; Player 2 Score = #{@player2score}".colorize(:green)
   else
     @player2lives -= 1
-    puts "Incorrect! Player 1 Lives Left = #{@player1lives}; Player 2 Lives Left = #{@player2lives}"
+    puts "Incorrect! Player 1 Lives Left = #{@player1lives}; Player 2 Lives Left = #{@player2lives}".colorize(:red)
   end
 
 end
