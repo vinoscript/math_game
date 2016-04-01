@@ -9,6 +9,17 @@
 @player1score = 0
 @player2score = 0
 
+# @player1: {
+#   name: "Player 1",
+#   lives: 3,
+#   score: 0
+# }
+
+
+# 1. Since you are not using classes, use hash for player
+# 2. play should be on one player and have a player turn 
+# 3. Outputs should be seperate from class
+# 4. Think of each method as a black box and make sure it's testable on its own, it's not the case for play
 
 def generate_question
   num1 = rand(1..20)
@@ -25,7 +36,8 @@ def play
   num1 = question_inputs[0]
   action = question_inputs[2]
   num2 = question_inputs[1]
-  question = "What is #{num1} #{action} #{num2}?"
+  # display_question
+  # question = "What is #{num1} #{action} #{num2}?"
 
   puts "Player 1 Turn: What is #{num1} #{action} #{num2}? >> "
   answer = gets.chomp.to_i
@@ -46,7 +58,7 @@ def play
   num1 = question_inputs[0]
   action = question_inputs[2]
   num2 = question_inputs[1]
-  question = "What is #{num1} #{action} #{num2}?"
+  # question = "What is #{num1} #{action} #{num2}?"
 
   puts "Player 2 Turn: What is #{num1} #{action} #{num2}? >> "
   answer = gets.chomp.to_i
