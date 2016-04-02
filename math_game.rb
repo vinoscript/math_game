@@ -2,6 +2,19 @@
 
 require 'colorize'
 
+@players = [
+  { 
+    name: "Player 1",
+    lives: 3,
+    score: 0
+  },
+  {
+    name: "Player 2",
+    lives: 3,
+    score: 0
+  }
+]
+
 @player1 = "Player 1"
 @player2 = "Player 2"
 
@@ -10,12 +23,6 @@ require 'colorize'
 
 @player1score = 0
 @player2score = 0
-
-# @player1: {
-#   name: "Player 1",
-#   lives: 3,
-#   score: 0
-# }
 
 
 # 1. Since you are not using classes, use hash for player
@@ -78,29 +85,26 @@ end
 def answer_correct?(inputs, answer_received)
   if inputs[2] == '+'
     correct_answer = inputs[0] + inputs[1]
-    if answer_received == correct_answer
-      true
-    else
-      false
-    end
+    answer_received == correct_answer ? true : false
   end 
 end
 
-
-def run_game 
-  
-  while (@player1lives > 0) && (@player2lives > 0) do 
-    play    
-  end
-
+def winner
   if @player1score > @player2score
     winner = @player1
   else
     winner = @player2
   end
+  "The winner was #{winner}! Player 1 Final Score = #{@player1score}; Player 2 Final Score = #{@player2score}"
+end
 
-  puts "The winner was #{winner}! Player 1 Final Score = #{@player1score}; Player 2 Final Score = #{@player2score}"
+# A method & call for running the game.
 
+def run_game 
+  while (@players[0] > 0) && (@player2lives > 0) do 
+    play    
+  end
+  puts winner.colorize(:yellow) 
 end
 
 run_game
