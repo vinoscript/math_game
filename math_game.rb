@@ -1,4 +1,4 @@
-# Add code for 2 player math game
+# Initial code for math_game, before adding classes.
 
 require 'colorize'
 
